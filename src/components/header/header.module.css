@@ -1,0 +1,43 @@
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 30px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  margin-right: 300px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 33px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+span {
+  padding: 30px;
+  color: #111;
+  font-family: benton-sans, Benton Sans, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+.login_vec {
+  margin-left: 400px;
+}
+
+.combined {
+  height: 20px;
+  width: 21px;
+  padding: 15px;
+}
