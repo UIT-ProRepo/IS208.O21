@@ -8,11 +8,16 @@ function handleClick() {
 }
 
 const login = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
+
   return (
     <div>
       {/* <Header  /> */}
       <div style={{ display: "flex", marginTop: "60px" }}>
-        <form className={styles.loginForm}>
+        <form className={styles.loginForm} onSubmit={handleSubmit}>
           <h2 className={styles.title}>Đăng nhập</h2>
           <label htmlFor="title1">Nhập mã nhân viên</label>
           <br />
