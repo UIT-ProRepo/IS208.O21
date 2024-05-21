@@ -1,11 +1,13 @@
-export const getU = async () => {
-  const response = await fetch("http://localhost:3002/");
+const API_DOMAIN = "http://localhost:3002/";
+
+export const get = async (path) => {
+  const response = await fetch(API_DOMAIN + path);
   const result = await response.json();
   return result;
 };
 
-export const createU = async (options) => {
-  const response = await fetch("http://localhost:3002/", {
+export const post = async (path, options) => {
+  const response = await fetch(API_DOMAIN + path, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -17,16 +19,16 @@ export const createU = async (options) => {
   return result;
 };
 
-export const deleteU = async (id) => {
-  const response = await fetch(`http://localhost:3002/${id}`, {
+export const del = async (path, id) => {
+  const response = await fetch(`${API_DOMAIN}${path}/${id}`, {
     method: "DELETE",
   });
   const result = await response.json();
   return result;
 };
 
-export const updateU = async (id, options) => {
-  const response = await fetch(`http://localhost:3002/${id}`, {
+export const patch = async (path, options) => {
+  const response = await fetch(API_DOMAIN + path, {
     method: "PATCH",
     headers: {
       Accept: "application/json",
