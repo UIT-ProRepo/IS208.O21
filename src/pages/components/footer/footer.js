@@ -1,9 +1,9 @@
-import style from "./footer.module.css"
+import "./footer.css"
 
 function Footer() {
     return (
         <>  
-            <div className={style.Footer}>
+            <div className="Footer">
                 <span>
                     Copyright 20234 @ by Eleven
                 </span>

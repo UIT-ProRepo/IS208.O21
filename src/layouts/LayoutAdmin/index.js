@@ -1,10 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../../pages/components/footer/footer";
 import Header from "../../pages/components/header/header";
-import { getCookie } from "../../helpers/cookie";
 
 function Layout() {
-  const token = getCookie("token");
   return (
     <>
       <div className="Layout-default">
@@ -12,6 +10,7 @@ function Layout() {
           <Header />
         </header>
         <main>
+          abc
           <Outlet />
         </main>
         <footer>

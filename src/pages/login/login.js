@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./login.module.css";
 import { getLogin } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
-
+import { setCookie } from "../../helpers/cookie";
 
 function handleClick() {
   console.log();
@@ -16,9 +16,17 @@ function Login() {
     const hashId = e.target[0].value;
     const password = e.target[1].value;
     const response = await getLogin(hashId, password);
+
     if (response.length > 0) {
-      // setCookie("")
-      navigate("/");
+      console.log(response);
+      setCookie("id", response[0].id, 1);
+      setCookie("hashId", response[0].hashId, 1);
+      setCookie("password", response[0].password, 1);
+      setCookie("role", response[0].role, 1);
+      setCookie("token", response[0].token, 1);
+      if (response[0].role == "user" || response[0].role == "reviewer")
+        navigate("/");
+      else if (response[0].role == "admin") navigate("/admin");
     } else {
       alert("Khong tim thay tk hoac mk");
     }
