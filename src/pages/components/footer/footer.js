@@ -1,15 +1,15 @@
-import "./footer.css"
+import "./footer.css";
 
 function Footer() {
-    return (
-        <>  
-            <div className="Footer">
-                <span>
-                    Copyright 20234 @ by Eleven
-                </span>
-           </div>
-        </>
-    )
+  return (
+    <>
+      <div className="Footer">
+        <span>
+          <p>Copyright 20234 @ by Eleven</p>
+        </span>
+      </div>
+    </>
+  );
 }
 
 export default Footer;

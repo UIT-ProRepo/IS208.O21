@@ -2,9 +2,8 @@
 import PrivateRoute from "../components/PrivateRoutes";
 import Layout from "../layouts/LayoutUser";
 import LayoutAdmin from "../layouts/LayoutAdmin/";
-import Notification from "../pages/User/Notification/notification";
 import Request from "../pages/User/Request/request";
-import UserInfo from "../pages/User/UserInfo/userInfo";
+import Meeting from "../pages/User/MeetingSheduled/meeting";
 import Error from "../pages/error/error";
 import HomePage from "../pages/home-page";
 import Login from "../pages/login/login";
@@ -37,13 +36,13 @@ export const routes = [
         element: <PrivateRoute />,
         children: [
           {
-            path: "userInfo",
-            element: <UserInfo />,
+            path: "meeting-scheduled",
+            element: <Meeting />,
           },
-          {
-            path: "notification",
-            element: <Notification />,
-          },
+          // {
+          //   path: "notification",
+          //   element: <Notification />,
+          // },
           {
             path: "/request",
             element: <Request />,

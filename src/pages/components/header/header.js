@@ -1,17 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./header.css";
-import Combined from "../../../images/CombinedShape.jpg";
-import Vector from "../../../images/Vector.jpg";
-import Logo from "../../../images/Logo.jpg";
+import Logo from "../../../images/mountain.png";
 import { Link, NavLink, OutLet } from "react-router-dom";
 import { getCookie } from "../../../helpers/cookie";
+import { useSelector } from "react-redux";
 
-const header = (props) => {
+const Header = (props) => {
   const navLinkActive = (e) => {
     return e.isActive ? "menu_link active" : "menu_link";
   };
   const token = getCookie("token");
+  const isLogin = useSelector((state) => state.loginReducer);
+  console.log(isLogin);
+
   return (
     <>
       <div className="header">
@@ -23,11 +25,13 @@ const header = (props) => {
               <ul>
                 <li>
                   <NavLink to="/" className={navLinkActive}>
-                    Trang chủ
+                    Tin tức chung
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/userInfo">Thông tin tài khoản</NavLink>
+                  <NavLink to="/meeting-scheduled" className={navLinkActive}>
+                    Đăng ký lịch họp
+                  </NavLink>
                 </li>
                 <li>
                   <NavLink to="/notification" className={navLinkActive}>
@@ -57,14 +61,10 @@ const header = (props) => {
               )}
             </li>
           </ul>
-          <div className="login_vec">
-            <img src={Vector} alt="men" className="combined" />
-            <img src={Combined} alt="men" className="combined" />
-          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default header;
+export default Header;

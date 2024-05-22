@@ -3,13 +3,12 @@ import styles from "./login.module.css";
 import { getLogin } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
 import { setCookie } from "../../helpers/cookie";
-
-function handleClick() {
-  console.log();
-}
+import { useDispatch } from "react-redux";
+import { checkLogin } from "../../actions/login";
 
 function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +23,9 @@ function Login() {
       setCookie("password", response[0].password, 1);
       setCookie("role", response[0].role, 1);
       setCookie("token", response[0].token, 1);
+
+      dispatch(checkLogin(true));
+
       if (response[0].role == "user" || response[0].role == "reviewer")
         navigate("/");
       else if (response[0].role == "admin") navigate("/admin");
@@ -34,7 +36,16 @@ function Login() {
 
   return (
     <div>
-      <div style={{ display: "flex", marginTop: "60px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          // backgroundImage: "../../images",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          width: "100%",
+        }}
+      >
         <form className={styles.loginForm} onSubmit={handleSubmit}>
           <h2 className={styles.title}>Đăng nhập</h2>
           <label htmlFor="title1">Nhập mã nhân viên</label>
@@ -44,17 +55,9 @@ function Login() {
           <label htmlFor="pass">Nhập mật khẩu</label>
           <br />
           <input type="password" name="pass" placeholder="*********"></input>
-          <button type="submit" onClick={handleClick}>
-            Đăng nhập
-          </button>
+          <button type="submit">Đăng nhập</button>
         </form>
-        <img
-          src="https://static.unica.vn/media/imagesck/1621050826_trach-nhiem-trong-cong-viec.jpg?v=1621050826"
-          alt="logo"
-          className={styles.logo}
-        />
       </div>
-      {/* <EmployeeList /> */}
     </div>
   );
 }
