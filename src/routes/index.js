@@ -9,17 +9,13 @@ import HomePage from "../pages/home-page";
 import Login from "../pages/login/login";
 import Dashboard from "../pages/dashboard/dashboard";
 import Logout from "../pages/login/logout";
-import UserInfo from "../pages/User/UserInfo/userInfo"
+import UserInfo from "../pages/User/UserInfo/userInfo";
 
 export const routes = [
   {
     path: "/",
     element: <Layout />,
     children: [
-      {
-        path: "/",
-        element: <HomePage />,
-      },
       {
         path: "/login",
         element: <Login />,
@@ -36,6 +32,10 @@ export const routes = [
       {
         element: <PrivateRoute />,
         children: [
+          {
+            path: "/",
+            element: <HomePage />,
+          },
           {
             path: "meeting-scheduled",
             element: <Meeting />,
