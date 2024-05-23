@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./meeting.css";
 import MeetingList from "./components/meetinglist/meetinglist";
 import { getCookie } from "../../../helpers/cookie";
+import { getScheduledByUser } from "../../../services/scheduledService";
 const Meeting = () => {
   const [ngayHop, setNgayHop] = useState("");
   const [buoiHop, setBuoiHop] = useState("");
   const [phongHop, setPhongHop] = useState("");
   const [phongBanDangKy, setPhongBanDangKy] = useState("");
-
+  const [scheduled, setScheduled] = useState([]);
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({
@@ -17,9 +19,15 @@ const Meeting = () => {
       phongBanDangKy,
     });
   };
-   
-  const id = getCookie("id");
-  
+
+  useEffect(() => {
+    const fetchMeetingScheduled = async () => {
+      const userId = getCookie(`id`);
+      const response = await getScheduledByUser(userId);
+      setScheduled(response);
+    };
+    fetchMeetingScheduled();
+  }, []);
 
   return (
     <>

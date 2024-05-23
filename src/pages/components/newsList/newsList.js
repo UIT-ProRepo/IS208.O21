@@ -11,7 +11,6 @@ function NewsList() {
     };
     fetchNews();
   }, []);
-  console.log(data);
 
   return (
     <>
