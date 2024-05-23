@@ -2,28 +2,28 @@ import React, { useEffect, useState } from "react";
 import "./meeting.css";
 import MeetingList from "./components/meetinglist/meetinglist";
 import { MdOutlineLogout } from "react-icons/md";
-import { createScheduled } from "../../../services/scheduledService"
+import { createScheduled } from "../../../services/scheduledService";
 import { getCookie } from "../../../helpers/cookie";
 
-const Meeting = () => {
-  const [ngayHop, setNgayHop] = useState("");
-  const [buoiHop, setBuoiHop] = useState("");
-  const [phongHop, setPhongHop] = useState("");
-  const [phongBanDangKy, setPhongBanDangKy] = useState("");
+const Meeting = (props) => {
+  const { onReload } = props;
+  const [date, setDate] = useState("");
+  const [session, setSession] = useState("");
+  const [room, setRoom] = useState("");
+  const [department, setDepartment] = useState("");
 
   const handleSubmit = async (event) => {
     const userId = getCookie("id");
     event.preventDefault();
     const newSched = {
-      ngayHop,
-      buoiHop,
-      phongHop,
-      phongBanDangKy,
+      date,
+      session,
+      room,
+      department,
     };
     const res = await createScheduled(userId, newSched);
+    onReload();
   };
-
-
 
   return (
     <>
@@ -34,16 +34,16 @@ const Meeting = () => {
             <div className="form-group-1">
               <div style={{ marginLeft: "20px", marginRight: "200px" }}>
                 <label
-                  htmlFor="ngayHop"
+                  htmlFor="date"
                   style={{ fontSize: "20px", fontWeight: "650" }}
                 >
                   Ngày họp:
                 </label>
                 <input
                   type="date"
-                  id="ngayHop"
-                  value={ngayHop}
-                  onChange={(event) => setNgayHop(event.target.value)}
+                  id="date"
+                  value={date}
+                  onChange={(event) => setDate(event.target.value)}
                   style={{
                     padding: "20px",
                     borderRadius: "40px",
@@ -56,15 +56,15 @@ const Meeting = () => {
               </div>
               <div>
                 <label
-                  htmlFor="buoiHop"
+                  htmlFor="session"
                   style={{ fontSize: "20px", fontWeight: "650" }}
                 >
                   Buổi họp:
                 </label>
                 <select
-                  id="buoiHop"
-                  value={buoiHop}
-                  onChange={(event) => setBuoiHop(event.target.value)}
+                  id="session"
+                  value={session}
+                  onChange={(event) => setSession(event.target.value)}
                   style={{
                     textAlign: "center",
                     padding: "20px",
@@ -73,15 +73,15 @@ const Meeting = () => {
                   }}
                 >
                   <option value="">Chọn buổi họp</option>
-                  <option value="sang">Sáng</option>
-                  <option value="chieu">Chiều</option>
-                  <option value="toi">Tối</option>
+                  <option value="Sáng">Sáng</option>
+                  <option value="Chiều">Chiều</option>
+                  <option value="Tối">Tối</option>
                 </select>
               </div>
             </div>
             <div className="form-group">
               <label
-                htmlFor="phongHop"
+                htmlFor="room"
                 style={{
                   fontSize: "20px",
                   fontWeight: "650",
@@ -91,9 +91,9 @@ const Meeting = () => {
                 Phòng họp:
               </label>
               <select
-                id="phongHop"
-                value={phongHop}
-                onChange={(event) => setPhongHop(event.target.value)}
+                id="room"
+                value={room}
+                onChange={(event) => setRoom(event.target.value)}
                 style={{
                   width: "575px",
                   marginLeft: "35px",
@@ -125,7 +125,7 @@ const Meeting = () => {
             </div>
             <div className="form-group">
               <label
-                htmlFor="phongBanDangKy"
+                htmlFor="department"
                 style={{
                   fontSize: "20px",
                   fontWeight: "650",
@@ -136,9 +136,9 @@ const Meeting = () => {
               </label>
               <input
                 type="text"
-                id="phongBanDangKy"
-                value={phongBanDangKy}
-                onChange={(event) => setPhongBanDangKy(event.target.value)}
+                id="department"
+                value={department}
+                onChange={(event) => setDepartment(event.target.value)}
                 style={{
                   width: "575px",
                   marginLeft: "35px",
@@ -156,7 +156,6 @@ const Meeting = () => {
             </div>
           </form>
         </div>
-        <MeetingList />
       </div>
     </>
   );

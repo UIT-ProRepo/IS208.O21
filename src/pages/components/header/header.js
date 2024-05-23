@@ -34,11 +34,6 @@ const Header = (props) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/notification" className={navLinkActive}>
-                    Thông báo
-                  </NavLink>
-                </li>
-                <li>
                 <NavLink to="/userInfo" className={navLinkActive}>
                   Hồ sơ
                 </NavLink>

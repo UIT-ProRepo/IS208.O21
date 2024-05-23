@@ -3,22 +3,22 @@ import "./meetinglist.css";
 import { getCookie } from "../../../../../helpers/cookie";
 import { getScheduledByUser } from "../../../../../services/scheduledService";
 
-const MeetingSchedule = () => {
+const MeetingSchedule = (props) => {
+  const { reload } = props;
   const [scheduled, setScheduled] = useState([]);
-  useEffect(() => { 
+  useEffect(() => {
     const fetchMeetingScheduled = async () => {
       const userId = getCookie(`id`);
       const response = await getScheduledByUser(userId);
       setScheduled(response);
     };
     fetchMeetingScheduled();
-  }, []);
+  }, [reload]);
 
-  console.log(scheduled);
   return (
     <div
       style={{
-        "backgroundColor": "#fff",
+        backgroundColor: "#fff",
         width: "630px",
         height: "578px",
         marginTop: "20px",

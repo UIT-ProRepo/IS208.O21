@@ -10,6 +10,7 @@ import Login from "../pages/login/login";
 import Dashboard from "../pages/dashboard/dashboard";
 import Logout from "../pages/login/logout";
 import UserInfo from "../pages/User/UserInfo/userInfo";
+import Scheduled from "../pages/User/MeetingSheduled";
 
 export const routes = [
   {
@@ -38,7 +39,7 @@ export const routes = [
           },
           {
             path: "meeting-scheduled",
-            element: <Meeting />,
+            element: <Scheduled />,
           },
           {
             path: "userInfo",
