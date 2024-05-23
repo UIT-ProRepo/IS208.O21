@@ -25,6 +25,11 @@ export const updateU = async (id, options) => {
   return result;
 };
 
+export const updateUser = async (id) => {
+  const result = await patch(`users/${id}`);
+  return result;
+};
+
 export const getLogin = async (hashId, password) => {
   const result = await get(`users?hashId=${hashId}&password=${password}`);
   return result;

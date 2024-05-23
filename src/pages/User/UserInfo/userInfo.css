@@ -20,31 +20,26 @@ h1 {
     margin-bottom: 20px;
 }
 
-.form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* gap: 20px; */
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
 .form-group label {
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     font-weight: bold;
 }
+
+.form-group:nth-child(3) {
+    width: 100px;
+}
+
+
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"],
-.form-group input[type="date"],
-.form-group input[type="file"] {
+.form-group input[type="date"] {
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 1em;
+    background-color: #fff;
 }
 
 .form-buttons {

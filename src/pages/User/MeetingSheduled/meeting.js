@@ -133,6 +133,7 @@ const Meeting = (props) => {
                   fontSize: "20px",
                   fontWeight: "650",
                   marginLeft: "40px",
+                  width: "200px",
                 }}
               >
                 Nội dung họp:
