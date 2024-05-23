@@ -40,7 +40,6 @@ function Login() {
         style={{
           display: "flex",
           justifyContent: "center",
-          // backgroundImage: "../../images",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           width: "100%",
