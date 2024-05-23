@@ -44,6 +44,7 @@ const Dispatch = (props) => {
         <thead>
           <tr>
             <th>Ngày gửi</th>
+            <th>Mã nhân viên</th>
             <th>Phạm vi</th>
             <th>Nội dung yêu cầu</th>
             <th>Trạng thái</th>
@@ -58,6 +59,7 @@ const Dispatch = (props) => {
             .map((request, index) => (
               <tr key={index}>
                 <td>{request.date_sent}</td>
+                <td>{request.hashId_user}</td>
                 <td>{request.scope}</td>
                 <td>{request.content}</td>
                 <td>
