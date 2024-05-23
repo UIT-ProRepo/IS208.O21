@@ -10,7 +10,6 @@ function Layout() {
           <Header />
         </header>
         <main>
-          abc
           <Outlet />
         </main>
         <footer>

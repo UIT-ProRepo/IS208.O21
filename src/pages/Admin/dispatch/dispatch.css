@@ -1,0 +1,96 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+th:first-child,
+td:first-child {
+  width: 90px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 200px;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 220px;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 110px;
+}
+
+th,
+td:nth-child(2) {
+  text-align: center;
+}
+
+th,
+td:nth-child(1) {
+  text-align: center;
+}
+
+th,
+td:nth-child(3) {
+  text-align: center;
+}
+
+th,
+td:nth-child(4) {
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.accept {
+  text-align: center;
+  background-color: #188d29;
+  border-radius: 15px;
+  color: #faf8e4;
+}
+
+.waiting {
+  text-align: center;
+  background-color: #bd8721;
+  border-radius: 15px;
+  color: #faf8e4;
+}
+
+.reject {
+  text-align: center;
+  background-color: rgb(199, 31, 31);
+  border-radius: 15px;
+  color: #faf8e4;
+}
+
+.notSend {
+  text-align: center;
+  background-color: rgb(68, 47, 211);
+  border-radius: 15px;
+  color: #faf8e4;
+}

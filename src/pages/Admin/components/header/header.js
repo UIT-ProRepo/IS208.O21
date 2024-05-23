@@ -24,13 +24,18 @@ const Header = (props) => {
             {token && (
               <ul>
                 <li>
-                  <NavLink to="/" className={navLinkActive}>
+                  <NavLink to="/admin/homepage" className={navLinkActive}>
                     Tin tức chung
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/request" className={navLinkActive}>
-                    Gửi yêu cầu
+                  <NavLink to="/admin/dispatch" className={navLinkActive}>
+                    Duyệt yêu cầu
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/admin/dashboard" className={navLinkActive}>
+                    Quản lý nhân viên
                   </NavLink>
                 </li>
               </ul>
