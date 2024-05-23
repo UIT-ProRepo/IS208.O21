@@ -9,6 +9,7 @@ import HomePage from "../pages/home-page";
 import Login from "../pages/login/login";
 import Dashboard from "../pages/dashboard/dashboard";
 import Logout from "../pages/login/logout";
+import UserInfo from "../pages/User/UserInfo/userInfo"
 
 export const routes = [
   {
@@ -39,10 +40,10 @@ export const routes = [
             path: "meeting-scheduled",
             element: <Meeting />,
           },
-          // {
-          //   path: "notification",
-          //   element: <Notification />,
-          // },
+          {
+            path: "userInfo",
+            element: <UserInfo />,
+          },
           {
             path: "/request",
             element: <Request />,

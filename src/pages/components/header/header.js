@@ -39,6 +39,11 @@ const Header = (props) => {
                   </NavLink>
                 </li>
                 <li>
+                <NavLink to="/userInfo" className={navLinkActive}>
+                  Hồ sơ
+                </NavLink>
+                </li>
+                <li>
                   <NavLink to="/request" className={navLinkActive}>
                     Gửi yêu cầu
                   </NavLink>
