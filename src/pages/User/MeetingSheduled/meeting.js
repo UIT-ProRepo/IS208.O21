@@ -52,6 +52,7 @@ const Meeting = (props) => {
                     border: "2px solid #000",
                     width: "200px",
                   }}
+                  required
                 />
               </div>
               <div>
@@ -71,6 +72,7 @@ const Meeting = (props) => {
                     borderRadius: "30px",
                     border: "2px solid #000",
                   }}
+                  required
                 >
                   <option value="">Chọn buổi họp</option>
                   <option value="Sáng">Sáng</option>
@@ -101,6 +103,7 @@ const Meeting = (props) => {
                   border: "2px solid #000",
                   padding: "15px",
                 }}
+                required
               >
                 <option value="">Chọn phòng họp</option>
                 <option value="Phòng họp A.105 (Tòa A)">
@@ -146,6 +149,7 @@ const Meeting = (props) => {
                   border: "2px solid #000",
                   height: "85px",
                 }}
+                required
               />
             </div>
             <div style={{ display: "flex", marginRight: "40px" }}>

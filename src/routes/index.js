@@ -7,7 +7,7 @@ import Meeting from "../pages/User/MeetingSheduled/meeting";
 import Error from "../pages/error/error";
 import HomePage from "../pages/home-page";
 import Login from "../pages/login/login";
-import Dashboard from "../pages/dashboard/dashboard";
+import Dashboard from "../pages/Admin/dashboard/dashboard";
 import Logout from "../pages/login/logout";
 import UserInfo from "../pages/User/UserInfo/userInfo";
 import Scheduled from "../pages/User/MeetingSheduled";
