@@ -2,7 +2,7 @@
 import React from "react";
 import "./header.css";
 import Logo from "../../../../images/mountain.png";
-import { Link, NavLink, OutLet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { getCookie } from "../../../../helpers/cookie";
 import { useSelector } from "react-redux";
 
