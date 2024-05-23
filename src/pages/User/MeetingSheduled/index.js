@@ -11,8 +11,8 @@ function Scheduled() {
   return (
     <>
       <div style={{ display: "flex", marginBottom: "12px" }}>
-        <Meeting onReload = {handleReload} />
-              <MeetingList reload={reload} />
+        <Meeting onReload={handleReload} />
+        <MeetingList reload={reload} />
       </div>
     </>
   );

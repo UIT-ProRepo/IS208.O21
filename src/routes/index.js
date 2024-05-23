@@ -11,6 +11,7 @@ import Dashboard from "../pages/Admin/dashboard/dashboard";
 import Logout from "../pages/login/logout";
 import UserInfo from "../pages/User/UserInfo/userInfo";
 import Scheduled from "../pages/User/MeetingSheduled";
+import RequestUser from "../pages/User/Request";
 
 export const routes = [
   {
@@ -47,7 +48,7 @@ export const routes = [
           },
           {
             path: "/request",
-            element: <Request />,
+            element: <RequestUser />,
           },
         ],
       },

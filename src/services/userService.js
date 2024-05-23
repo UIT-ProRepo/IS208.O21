@@ -34,3 +34,8 @@ export const getLogin = async (hashId, password) => {
   const result = await get(`users?hashId=${hashId}&password=${password}`);
   return result;
 };
+
+export const getUserByHashId = async (hashId) => {
+  const result = await get(`users?hashId=${hashId}`);
+  return result;
+};

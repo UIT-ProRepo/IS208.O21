@@ -1,8 +1,8 @@
-import Meeting from "./meeting";
-import MeetingList from "./components/meetinglist/meetinglist";
+import Request from "./request";
+import RequestList from "./requestList/requestList";
 import { useState } from "react";
 
-function Scheduled() {
+function RequestUser() {
   const [reload, setReload] = useState(false);
 
   const handleReload = () => {
@@ -11,11 +11,11 @@ function Scheduled() {
   return (
     <>
       <div style={{ display: "flex", marginBottom: "12px" }}>
-        <Meeting onReload = {handleReload} />
-              <MeetingList reload={reload} />
+        <Request onReload={handleReload} />
+        <RequestList reload={reload} />
       </div>
     </>
   );
 }
 
-export default Scheduled;
+export default RequestUser;

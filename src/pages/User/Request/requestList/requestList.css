@@ -17,13 +17,43 @@ th {
   color: white;
 }
 
-th,
+th:first-child,
 td:first-child {
-  min-width: 100px;
+  width: 90px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 200px;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 220px;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 110px;
 }
 
 th,
 td:nth-child(2) {
+  text-align: center;
+}
+
+th,
+td:nth-child(1) {
+  text-align: center;
+}
+
+th,
+td:nth-child(3) {
+  text-align: center;
+}
+
+th,
+td:nth-child(4) {
   text-align: center;
 }
 
@@ -32,7 +62,35 @@ tr:nth-child(even) {
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 35px;
-    font-weight: 700;
-  }
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.accept {
+  text-align: center;
+  background-color: #188d29;
+  border-radius: 15px;
+  color : #faf8e4
+}
+
+.waiting {
+  text-align: center;
+  background-color: #bd8721;
+  border-radius: 15px;
+  color : #faf8e4
+}
+
+.reject {
+  text-align: center;
+  background-color: rgb(199, 31, 31);
+  border-radius: 15px;
+  color : #faf8e4
+}
+
+.notSend {
+  text-align: center;
+  background-color: rgb(68, 47, 211);
+  border-radius: 15px;
+  color : #faf8e4
+}
