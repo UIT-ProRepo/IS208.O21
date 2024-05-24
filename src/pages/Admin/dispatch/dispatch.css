@@ -24,7 +24,7 @@ td:first-child {
 
 th:nth-child(2),
 td:nth-child(2) {
-  width: 200px;
+  width: 150px;
 }
 
 th:nth-child(3),
@@ -32,29 +32,32 @@ td:nth-child(3) {
   width: 220px;
 }
 
+th:nth-child(5),
+td:nth-child(5) {
+  width: 180px;
+}
+
 th:nth-child(4),
 td:nth-child(4) {
   width: 110px;
 }
 
-th,
 td:nth-child(2) {
   text-align: center;
 }
 
-th,
 td:nth-child(1) {
   text-align: center;
 }
 
-th,
 td:nth-child(3) {
   text-align: center;
 }
 
-th,
 td:nth-child(4) {
   text-align: center;
+
+  min-width: 200px;
 }
 
 tr:nth-child(even) {
@@ -72,6 +75,8 @@ h1 {
   background-color: #188d29;
   border-radius: 15px;
   color: #faf8e4;
+  max-width: 130px;
+  margin: 0 auto;
 }
 
 .waiting {
@@ -79,6 +84,8 @@ h1 {
   background-color: #bd8721;
   border-radius: 15px;
   color: #faf8e4;
+  max-width: 130px;
+  margin: 0 auto;
 }
 
 .reject {
@@ -86,6 +93,8 @@ h1 {
   background-color: rgb(199, 31, 31);
   border-radius: 15px;
   color: #faf8e4;
+  width: 130px;
+  margin: 0 auto;
 }
 
 .notSend {
@@ -93,4 +102,24 @@ h1 {
   background-color: rgb(68, 47, 211);
   border-radius: 15px;
   color: #faf8e4;
+  width: 130px;
+  margin: 0 auto;
+}
+
+.dispatchTo {
+  text-align: center;
+  background-color: rgb(3, 155, 31);
+  border-radius: 15px;
+  color: #faf8e4;
+  width: 130px;
+  margin: 0 auto;
+}
+
+.rejectNow {
+  text-align: center;
+  background-color: rgb(237, 53, 11);
+  border-radius: 15px;
+  color: #faf8e4;
+  width: 130px;
+  margin: 0 auto;
 }

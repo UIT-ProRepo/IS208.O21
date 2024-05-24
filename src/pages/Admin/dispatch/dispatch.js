@@ -22,6 +22,14 @@ const Dispatch = (props) => {
     else if (e == "Từ chối") return "reject b";
   };
 
+  const handleDispatch = (e) => {
+
+  }
+
+  const handleReject = (e) => {
+    
+  }
+
   const uHasdId = getCookie("hashId");
   return (
     <div
@@ -67,7 +75,12 @@ const Dispatch = (props) => {
                     {request.status}
                   </div>
                 </td>
-                <td></td>
+                <td>
+                  <div style={{display: "flex"}}>
+                    <div className="dispatchTo" onClick={handleDispatch}>Chuyển tiếp</div>
+                    <div className="rejectNow" onClick={handleReject}>Từ chối</div>
+                  </div>
+                </td>
               </tr>
             ))}
         </tbody>
