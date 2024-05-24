@@ -28,6 +28,7 @@ export const del = async (path, id) => {
 };
 
 export const patch = async (path, options) => {
+  console.log(API_DOMAIN + path);
   const response = await fetch(API_DOMAIN + path, {
     method: "PATCH",
     headers: {

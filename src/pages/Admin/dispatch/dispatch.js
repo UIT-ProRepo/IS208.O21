@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./dispatch.css";
 import { getCookie } from "../../../helpers/cookie";
 import { get } from "../../../utils/request";
+import { updateRequest } from "../../../services/requestService";
 
 const Dispatch = (props) => {
-  const { reload } = props;
+  const [reload, setReload] = useState(false);
   const [request, setRequest] = useState([]);
 
   useEffect(() => {
@@ -15,6 +16,10 @@ const Dispatch = (props) => {
     fetchRequest();
   }, [reload]);
 
+  const handleReload = () => {
+    setReload(!reload);
+  };
+
   const statusCSS = (e) => {
     if (e == "Chưa gửi") return "notSend b";
     else if (e == "Đang chờ duyệt") return "waiting b";
@@ -22,13 +27,15 @@ const Dispatch = (props) => {
     else if (e == "Từ chối") return "reject b";
   };
 
-  const handleDispatch = (e) => {
+  const handleDispatch = async (request) => {
+    var Dispatch = request;
+    console.log(Dispatch);
+    const updateField = { status: "Đang chờ duyệt" };
+    const res = await updateRequest(Dispatch.id, updateField);
+    handleReload();
+  };
 
-  }
-
-  const handleReject = (e) => {
-    
-  }
+  const handleReject = (resquest) => {};
 
   const uHasdId = getCookie("hashId");
   return (
@@ -76,9 +83,19 @@ const Dispatch = (props) => {
                   </div>
                 </td>
                 <td>
-                  <div style={{display: "flex"}}>
-                    <div className="dispatchTo" onClick={handleDispatch}>Chuyển tiếp</div>
-                    <div className="rejectNow" onClick={handleReject}>Từ chối</div>
+                  <div style={{ display: "flex" }}>
+                    <div
+                      className="dispatchTo"
+                      onClick={() => handleDispatch(request)}
+                    >
+                      Chuyển tiếp
+                    </div>
+                    <div
+                      className="rejectNow"
+                      onClick={() => handleReject(request, request.id)}
+                    >
+                      Từ chối
+                    </div>
                   </div>
                 </td>
               </tr>

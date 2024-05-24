@@ -104,6 +104,7 @@ h1 {
   color: #faf8e4;
   width: 130px;
   margin: 0 auto;
+  transition: transform 0.3s ease;
 }
 
 .dispatchTo {
@@ -113,6 +114,7 @@ h1 {
   color: #faf8e4;
   width: 130px;
   margin: 0 auto;
+  transition: transform 0.3s ease;
 }
 
 .rejectNow {
@@ -122,4 +124,19 @@ h1 {
   color: #faf8e4;
   width: 130px;
   margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.rejectNow:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.dispatchTo:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.notSend:hover {
+  transform: scale(0.9);
 }
