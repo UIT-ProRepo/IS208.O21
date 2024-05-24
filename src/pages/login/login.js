@@ -26,8 +26,8 @@ function Login() {
 
       dispatch(checkLogin(true));
 
-      if (response[0].role == "user" || response[0].role == "reviewer")
-        navigate("/");
+      if (response[0].role == "user") navigate("/");
+      else if (response[0].role == "reviewer") navigate("/reviewer/homepage");
       else if (response[0].role == "admin") navigate("/admin/homepage");
     } else {
       alert("Khong tim thay tk hoac mk");

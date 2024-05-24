@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./dispatch.css";
-import { getCookie } from "../../../helpers/cookie";
-import { get } from "../../../utils/request";
-import { updateRequest } from "../../../services/requestService";
+import "./requestReview.css";
+import { getCookie } from "../../helpers/cookie";
+import { get } from "../../utils/request";
+import { updateRequest } from "../../services/requestService";
 
-const Dispatch = (props) => {
+const Review = (props) => {
   const [reload, setReload] = useState(false);
   const [request, setRequest] = useState([]);
 
@@ -40,15 +40,17 @@ const Dispatch = (props) => {
     const updateField = { status: "Từ chối" };
     const res = await updateRequest(Dispatch.id, updateField);
     handleReload();
-  };
+    };
+    
+    
 
   const uHasdId = getCookie("hashId");
   return (
     <div
       style={{
         backgroundColor: "#fff",
-        width: "1280px",
-        height: "578px",
+        width: "1480px",
+        minHeight: "549px",
         marginTop: "20px",
         marginRight: "auto",
         marginLeft: "auto",
@@ -75,7 +77,7 @@ const Dispatch = (props) => {
         <tbody>
           {request
             .filter((resq) => {
-              return resq.status == "Chưa gửi";
+              return resq.status != "Chưa gửi";
             })
             .map((request, index) => (
               <tr key={index}>
@@ -112,4 +114,4 @@ const Dispatch = (props) => {
   );
 };
 
-export default Dispatch;
+export default Review;

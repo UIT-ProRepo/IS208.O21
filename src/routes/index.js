@@ -11,6 +11,8 @@ import UserInfo from "../pages/User/UserInfo/userInfo";
 import Scheduled from "../pages/User/MeetingSheduled";
 import RequestUser from "../pages/User/Request";
 import Dispatch from "../pages/Admin/dispatch/dispatch";
+import LayoutReviewer from "../layouts/LayoutReviewer/index";
+import Review from "../pages/request-review/requestReview";
 
 export const routes = [
   {
@@ -71,9 +73,36 @@ export const routes = [
           {
             path: "dispatch",
             element: <Dispatch />,
-          }
+          },
         ],
       },
+    ],
+  },
+  {
+    path: "/reviewer",
+    element: <LayoutReviewer />,
+    children: [
+      {
+        element: <PrivateRoute />,
+        children: [
+          {
+            path: "homepage",
+            element: <HomePage />,
+          },
+          {
+            path: "meeting-scheduled",
+            element: <Scheduled />,
+          },
+          {
+            path: "userInfo",
+            element: <UserInfo />,
+          },
+          {
+            path: "reviewRequest",
+            element: <Review />,
+          }
+        ]
+      }
     ],
   },
 ];
