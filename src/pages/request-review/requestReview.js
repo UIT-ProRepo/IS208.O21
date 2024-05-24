@@ -1,10 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./requestReview.css";
-import { getCookie } from "../../helpers/cookie";
 import { get } from "../../utils/request";
 import { updateRequest } from "../../services/requestService";
 
-const Review = (props) => {
+const Review = () => {
   const [reload, setReload] = useState(false);
   const [request, setRequest] = useState([]);
 
@@ -21,17 +21,18 @@ const Review = (props) => {
   };
 
   const statusCSS = (e) => {
-    if (e == "Chưa gửi") return "notSend b";
-    else if (e == "Đang chờ duyệt") return "waiting b";
-    else if (e == "Chấp nhận") return "accept b";
-    else if (e == "Từ chối") return "reject b";
+    if (e === "Chưa gửi") return "notSend b";
+    else if (e === "Đang chờ duyệt") return "waiting b";
+    else if (e === "Chấp nhận") return "accept b";
+    else if (e === "Từ chối") return "reject b";
   };
 
-  const handleDispatch = async (request) => {
+  const handleAccept = async (request) => {
     var Dispatch = request;
     console.log(Dispatch);
-    const updateField = { status: "Đang chờ duyệt" };
+    const updateField = { status: "Chấp nhận" };
     const res = await updateRequest(Dispatch.id, updateField);
+
     handleReload();
   };
 
@@ -40,11 +41,8 @@ const Review = (props) => {
     const updateField = { status: "Từ chối" };
     const res = await updateRequest(Dispatch.id, updateField);
     handleReload();
-    };
-    
-    
+  };
 
-  const uHasdId = getCookie("hashId");
   return (
     <div
       style={{
@@ -77,7 +75,7 @@ const Review = (props) => {
         <tbody>
           {request
             .filter((resq) => {
-              return resq.status != "Chưa gửi";
+              return resq.status !== "Chưa gửi";
             })
             .map((request, index) => (
               <tr key={index}>
@@ -91,20 +89,25 @@ const Review = (props) => {
                   </div>
                 </td>
                 <td>
-                  <div style={{ display: "flex" }}>
-                    <div
-                      className="dispatchTo"
-                      onClick={() => handleDispatch(request)}
-                    >
-                      Chuyển tiếp
+                  {request.status === "Chấp nhận" ||
+                  request.status === "Từ chối" ? (
+                    <div className="done">Đã hoàn thành</div>
+                  ) : (
+                    <div style={{ display: "flex",  }}>
+                      <div
+                        className="dispatchTo"
+                        onClick={() => handleAccept(request)}
+                      >
+                        Duyệt yêu cầu
+                      </div>
+                      <div
+                        className="rejectNow"
+                        onClick={() => handleReject(request)}
+                      >
+                        Từ chối
+                      </div>
                     </div>
-                    <div
-                      className="rejectNow"
-                      onClick={() => handleReject(request)}
-                    >
-                      Từ chối
-                    </div>
-                  </div>
+                  )}
                 </td>
               </tr>
             ))}

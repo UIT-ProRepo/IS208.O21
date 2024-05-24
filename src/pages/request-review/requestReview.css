@@ -82,3 +82,17 @@ h1 {
   border-radius: 15px;
   color: #faf8e4;
 }
+
+.done {
+  text-align: center;
+  background-color: #096e6e;
+  border-radius: 15px;
+  color: #faf8e4;
+  max-width: 230px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.done:hover {
+  transform: scale(0.9);
+}
