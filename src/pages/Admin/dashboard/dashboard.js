@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./dashboard.css";
-import { get } from "../../../utils/request";
+import { del, get } from "../../../utils/request";
+import Modal from "./components/updateModal/modal";
+import { deleteU } from "../../../services/userService";
 
 const Dashboard = (props) => {
   const [reload, setReload] = useState(false);
   const [users, setUser] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
+  const [ID, setID] = useState("");
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -16,6 +21,10 @@ const Dashboard = (props) => {
 
   const handleReload = () => {
     setReload(!reload);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const roleLabel = (role) => {
@@ -43,17 +52,18 @@ const Dashboard = (props) => {
     else return "Xóa";
   };
   const handleUpdateUser = async (user) => {
-    var Dispatch = user;
-    console.log(Dispatch);
-    const updateField = { status: "Đang chờ duyệt" };
-    // const res = await updateRequest(Dispatch.id, updateField);
-    handleReload();
+    if (user.role !== "admin") {
+      setSelectedEmployee(user);
+      setID(user.id);
+      setShowModal(true);
+      handleReload();
+    }
   };
 
   const handleDeleteUser = async (user) => {
-    var Dispatch = user;
-    const updateField = { status: "Từ chối" };
-    // const res = await updateRequest(Dispatch.id, updateField);
+    const user_id = user.id;
+    console.log(user_id);
+    const res = await deleteU(user_id);
     handleReload();
   };
 
@@ -111,7 +121,7 @@ const Dashboard = (props) => {
               <td>
                 <div
                   className={statusCSSD(users.role)}
-                  onClick={() => handleDeleteUser(users, users.id)}
+                  onClick={() => handleDeleteUser(users)}
                 >
                   {checkRoleD(users.role)}
                 </div>
@@ -120,6 +130,14 @@ const Dashboard = (props) => {
           ))}
         </tbody>
       </table>
+      <Modal
+        show={showModal}
+        handleClose={handleCloseModal}
+        employee={selectedEmployee}
+        iD={ID}
+        onReload={handleReload}
+        reload={reload}
+      />
     </div>
   );
 };

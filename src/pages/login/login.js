@@ -17,7 +17,7 @@ function Login() {
     const response = await getLogin(hashId, password);
 
     if (response.length > 0) {
-      console.log(response);
+      console.log(response[0]);
       setCookie("id", response[0].id, 1);
       setCookie("hashId", response[0].hashId, 1);
       setCookie("password", response[0].password, 1);
@@ -30,7 +30,7 @@ function Login() {
       else if (response[0].role == "reviewer") navigate("/reviewer/homepage");
       else if (response[0].role == "admin") navigate("/admin/homepage");
     } else {
-      alert("Khong tim thay tk hoac mk");
+      alert("Không tìm thấy tài khoản hoặc mật khẩu");
     }
   };
 
@@ -47,13 +47,30 @@ function Login() {
       >
         <form className={styles.loginForm} onSubmit={handleSubmit}>
           <h2 className={styles.title}>Đăng nhập</h2>
-          <label htmlFor="title1">Nhập mã nhân viên</label>
+          <label
+            htmlFor="title1"
+            style={{ fontSize: "18px", fontWeight: "600" }}
+          >
+            Nhập mã nhân viên
+          </label>
+
+          <input
+            type="text"
+            name="title1"
+            placeholder="Mã nhân viên"
+            style={{ textAlign: "left" }}
+          ></input>
           <br />
-          <input type="text" name="title1" placeholder="Mã nhân viên"></input>
-          <br />
-          <label htmlFor="pass">Nhập mật khẩu</label>
-          <br />
-          <input type="password" name="pass" placeholder="*********"></input>
+          <label htmlFor="pass" style={{ fontSize: "18px", fontWeight: "600" }}>
+            Nhập mật khẩu
+          </label>
+
+          <input
+            type="password"
+            name="pass"
+            placeholder="*********"
+            style={{ textAlign: "left" }}
+          ></input>
           <button type="submit">Đăng nhập</button>
         </form>
       </div>

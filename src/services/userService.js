@@ -22,6 +22,7 @@ export const deleteU = async (id) => {
 
 export const updateU = async (id, options) => {
   const result = await patch(`users/${id}`, options);
+  console.log(result);
   return result;
 };
 
@@ -31,6 +32,7 @@ export const updateUser = async (id) => {
 };
 
 export const getLogin = async (hashId, password) => {
+  // console.log("http://localhost:3002/" +`users?hashId=${hashId}&password=${password}`);
   const result = await get(`users?hashId=${hashId}&password=${password}`);
   return result;
 };

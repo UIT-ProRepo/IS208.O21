@@ -1,0 +1,226 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "hashId": "2004",
+      "password": "123",
+      "role": "user",
+      "dateOfBirth": "2004-10-05",
+      "token": "B79HrAlppoDkVV4",
+      "name": "Võ Thanh Nhàn",
+      "phone_number": "0934183741",
+      "cccd": "0492041237238123",
+      "gender": "Nữ",
+      "scheduled_meeting": []
+    },
+    {
+      "id": "2",
+      "hashId": 2005,
+      "password": "124",
+      "role": "user",
+      "dateOfBirth": "2004-01-01",
+      "token": "f1Zep4GwG2f0xQ7",
+      "name": "Huỳnh Ngọc Diễm Phúc",
+      "phone_number": "0962260337",
+      "cccd": "04920414283524",
+      "gender": "Nữ",
+      "scheduled_meeting": [
+        {
+          "date": "2024-05-10",
+          "session": "Chiều",
+          "room": "Phòng họp E.802 ( Tòa E )",
+          "department": "Review lương lần 1"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "hashId": 2006,
+      "password": "125",
+      "role": "admin",
+      "dateOfBirth": "2004-01-01",
+      "token": "f1Zep4GwG2f0xQ7",
+      "name": "Phạm Nguyên Tú",
+      "phone_number": "0934145609",
+      "cccd": "04920414381974",
+      "gender": "Nam",
+      "scheduled_meeting": []
+    },
+    {
+      "id": "4",
+      "hashId": 2007,
+      "password": "126",
+      "role": "reviewer",
+      "dateOfBirth": "2004-01-01",
+      "token": "F8sP4lR2nM0iC9O",
+      "name": "Huỳnh Yến Nhi",
+      "phone_number": "0934263903",
+      "cccd": "04920224532601",
+      "gender": "Nữ",
+      "scheduled_meeting": [
+        {
+          "date": "16-05-2024",
+          "session": "Chiều",
+          "room": "Phòng họp B.110 ( Tòa B )",
+          "department": "Review lương lần 2"
+        },
+        {
+          "date": "21-05-2024",
+          "session": "Sáng",
+          "room": "Phòng họp B.110 ( Tòa B )",
+          "department": "Kế hoạch xây dựng dự án sàn BTH"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "hashId": 2008,
+      "password": "127",
+      "role": "user",
+      "dateOfBirth": "2004-01-01",
+      "token": "F8sP4lR2nM0iC9O",
+      "name": "Phạm Thuỵ Thảo Như",
+      "phone_number": "0934395023",
+      "cccd": "049202237459326",
+      "gender": "Nữ",
+      "scheduled_meeting": [
+        {
+          "date": "16-05-2024",
+          "session": "Chiều",
+          "room": "Phòng họp B.110 ( Tòa B )",
+          "department": "Review lương lần 2"
+        },
+        {
+          "date": "21-05-2024",
+          "session": "Sáng",
+          "room": "Phòng họp B.110 ( Tòa B )",
+          "department": "Kế hoạch xây dựng dự án sàn BTH"
+        }
+      ]
+    }
+  ],
+  "request": [
+    {
+      "id": "1",
+      "date_sent": "21-05-2024",
+      "hashId_user": "2004",
+      "scope": "Xin nghỉ phép",
+      "content": "Tôi muốn nghỉ ngày mai",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "2",
+      "date_sent": "22-05-2024",
+      "hashId_user": "2004",
+      "scope": "Xin nghỉ phép",
+      "content": "Tôi muốn nghỉ ngày mốt",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "3",
+      "date_sent": "27-05-2024",
+      "hashId_user": "2004",
+      "scope": "Xin nghỉ việc",
+      "content": "Tôi muốn nghỉ việc",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "4",
+      "date_sent": "28-05-2024",
+      "hashId_user": "2004",
+      "scope": "Khác",
+      "content": "Tôi không muốn nghỉ việc",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "5",
+      "date_sent": "23-05-2024",
+      "hashId_user": "2004",
+      "scope": "Xin nghỉ thai sản",
+      "content": "Tôi lại muốn nghỉ việc",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "6",
+      "date_sent": "24-05-2024",
+      "hashId_user": "2004",
+      "scope": "Xin nghỉ phép",
+      "content": "Test",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "24eb",
+      "date_sent": "24-05-2024",
+      "hashId_user": "2005",
+      "scope": "Xin nghỉ việc",
+      "content": "Tôi muốn nghỉ ngày mai",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "8d76",
+      "date_sent": "24-05-2024",
+      "hashId_user": "2004",
+      "scope": "Khác",
+      "content": "Tôi muốn kiện Admin",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "7605",
+      "date_sent": "24-05-2024",
+      "hashId_user": "2005",
+      "scope": "Xin nghỉ việc",
+      "content": "Tôi không muốn làm việc vì sếp giao task quá khó",
+      "status": "Chưa gửi"
+    }
+  ],
+  "news": [
+    {
+      "id": "1",
+      "title": "About Ghost + Gatsby",
+      "urlThumbnail": "https://gatsby.ghost.io/content/images/2019/01/ghost-headless-feature-image.png",
+      "head_title": "Build an API driven static-site with Gatsby.js and use Ghost as a completely decoupled headless CMS. Read more about how it works and how to use this starter theme here!"
+    },
+    {
+      "id": "2",
+      "title": "Welcome to Ghost",
+      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/welcome-to-ghost.png",
+      "head_title": "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time."
+    },
+    {
+      "id": "3",
+      "title": "Writing posts with Ghost ✍️",
+      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/writing-posts-with-ghost.png",
+      "head_title": "Discover familiar formatting options in a functional toolbar and the ability to add dynamic content seamlessly."
+    },
+    {
+      "id": "4",
+      "title": "Publishing options",
+      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/publishing-options.png",
+      "head_title": "The Ghost editor post settings menu has everything you need to fully optimise and distribute your content effectively."
+    },
+    {
+      "id": "5",
+      "title": "Managing admin settings",
+      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/admin-settings.png",
+      "head_title": "There are a couple of things to do next while you're getting set up: making your site private and inviting your team."
+    },
+    {
+      "id": "6",
+      "title": "Organising your content",
+      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/organising-your-content.png",
+      "head_title": "Ghost has a flexible organisational taxonomy called tags and the ability to create custom site structures using dynamic routes."
+    },
+    {
+      "id": "7",
+      "title": "Apps & integrations",
+      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/app-integrations.png",
+      "head_title": "Work with all your favourite apps and tools or create your own custom integrations using the Ghost API."
+    },
+    {
+      "id": "8",
+      "title": "Creating a custom theme",
+      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/creating-a-custom-theme.png",
+      "head_title": "Ghost comes with a beautiful default theme designed for publishers which can easily be adapted for most purposes, or you can build a custom theme to suit your needs."
+    }
+  ]
+}
