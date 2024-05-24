@@ -35,7 +35,12 @@ const Dispatch = (props) => {
     handleReload();
   };
 
-  const handleReject = (resquest) => {};
+  const handleReject = async (resquest) => {
+    var Dispatch = request; 
+    const updateField = { status: "Từ chối" };
+    const res = await updateRequest(Dispatch.id, updateField);
+    handleReload();
+  };
 
   const uHasdId = getCookie("hashId");
   return (
