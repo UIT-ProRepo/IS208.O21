@@ -23,6 +23,7 @@ function Login() {
       setCookie("password", response[0].password, 1);
       setCookie("role", response[0].role, 1);
       setCookie("token", response[0].token, 1);
+      setCookie("avatar", response[0].ava_url, 1);
 
       dispatch(checkLogin(true));
 

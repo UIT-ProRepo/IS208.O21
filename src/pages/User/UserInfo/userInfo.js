@@ -4,25 +4,34 @@ import { getCookie } from "../../../helpers/cookie";
 import { getUserById, updateU } from "../../../services/userService";
 
 function UserInfo() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [cccd, setCccd] = useState("");
   const [phone_number, setPhone_number] = useState("");
-
+  const [reload, setReload] = useState(false);
+  const [pass, setPass] = useState("");
   useEffect(() => {
     const fetchUser = async () => {
       const userId = getCookie(`id`);
       const response = await getUserById(userId);
       setData(response);
       setLoading(false);
+      if (response) {
+        setCccd(response[0].ava_url);
+        setPhone_number(response[0].phone_number);
+        setPass(response[0].pass);
+      }
     };
     fetchUser();
-  }, []);
+  }, [reload]);
+
+  const handleReload = () => {
+    setReload(!reload);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
   }
-  console.log(data[0]);
   if (!data || data.length === 0) {
     return <div>No user data available</div>;
   }
@@ -36,17 +45,21 @@ function UserInfo() {
   const handleSubmit = async (event) => {
     const userId = getCookie("id");
     event.preventDefault();
+
     const profile = {
+      ...data[0],
       phone_number: phone_number,
-      cccd: cccd,
+      ava_url: cccd,
+      password: pass
     };
     const res = await updateU(userId, profile);
+    handleReload();
   };
   return (
     <div className="Info">
       <h1>THÔNG TIN NHÂN VIÊN</h1>
       <p className="note">
-        *Chỉ được phép cập nhật số điện thoại, căn cước công dân
+        *Chỉ được phép cập nhật số điện thoại, ảnh đại diện
       </p>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-group" style={{ display: "flex" }}>
@@ -55,7 +68,7 @@ function UserInfo() {
             <input
               type="text"
               name="name"
-              style={{ width: "400px" }}
+              style={{ width: "250px" }}
               defaultValue={data[0].name || ""}
               readOnly
             />
@@ -66,7 +79,7 @@ function UserInfo() {
             <input
               type="text"
               name="phone_number"
-              style={{ width: "400px" }}
+              style={{ width: "250px" }}
               defaultValue={data[0].phone_number}
               onChange={(event) => setPhone_number(event.target.value)}
             />
@@ -82,6 +95,16 @@ function UserInfo() {
               name="gender"
               defaultValue={data[0].gender}
               readOnly
+            />
+          </div>
+          <div>
+            <label htmlFor="pass">Mật khẩu</label>
+            <input
+              type="password"
+              name="pass"
+              style={{ width: "250px" }}
+              // defaultValue={data[0].password}
+              onChange={(event) => setPass(event.target.value)}
             />
           </div>
         </div>
@@ -112,7 +135,7 @@ function UserInfo() {
             <label htmlFor="hashId">Mã nhân viên</label>
             <input
               type="text"
-              style={{ width: "400px", marginRight: "100px" }}
+              style={{ width: "200px", marginRight: "100px" }}
               name="hashId"
               defaultValue={data[0].hashId}
               readOnly
@@ -123,11 +146,37 @@ function UserInfo() {
             <input
               type="text"
               name="cccd"
-              style={{ width: "500px" }}
+              style={{ width: "250px" }}
               defaultValue={data[0].cccd}
+              readOnly
+            />
+          </div>
+          <div className="form-group">
+            <label
+              htmlFor="ava"
+              style={{ width: "200px", marginLeft: "100px" }}
+            >
+              Url ảnh đại diện
+            </label>
+            <input
+              type="text"
+              name="ava"
+              style={{ width: "250px", marginLeft: "100px" }}
+              defaultValue={data[0].ava_url}
               onChange={(event) => setCccd(event.target.value)}
             />
           </div>
+          <img
+            src={data[0].ava_url}
+            alt="avatar"
+            style={{
+              width: "100px",
+              height: "100px",
+              marginLeft: "300px",
+              marginTop: "10px",
+              borderRadius: "999px",
+            }}
+          ></img>
         </div>
         <div className="form-buttons">
           <button type="submit" className="btn-update">

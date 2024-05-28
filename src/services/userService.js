@@ -7,6 +7,7 @@ export const getUser = async () => {
 
 export const getUserById = async (id) => {
   const result = await get(`users?id=${id}`);
+  // console.log(result);
   return result;
 };
 
@@ -22,7 +23,7 @@ export const deleteU = async (id) => {
 
 export const updateU = async (id, options) => {
   const result = await patch(`users/${id}`, options);
-  console.log(result);
+  // console.log(result);
   return result;
 };
 

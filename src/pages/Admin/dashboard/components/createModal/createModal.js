@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./modal.css";
-import { updateU } from "../../../../../services/userService";
+import "./createModal.css";
+import { createU, updateU } from "../../../../../services/userService";
 import { get } from "../../../../../utils/request";
+import { generateToken } from "../../../../../helpers/generateToken";
 
-const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
+const CreateModal = ({ show, handleClose, onReload, reload,users }) => {
   const [employeeData, setEmployeeData] = useState([]);
 
   const handleChange = (event, fname) => {
@@ -11,19 +12,21 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
     setEmployeeData((prevData) => ({
       ...prevData,
       [fname]: value,
-    })
-    );
+      ava_url : "https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png"
+    }));
   };
-  console.log(employeeData);
 
+  
 
-  const handleUpdateUser = async () => {
+  const handleCreateUser = async () => {
     const profile = {
       ...employeeData,
+      scheduled_meeting: [],
+      token: generateToken(),
+      id: users.length +1 ,
     };
-    const updateF = { users: profile };
-    // console.log(profile);
-    const res = await updateU(employee.id, profile);
+    const res = createU(profile);
+    console.log(profile);
     onReload();
     handleClose();
   };
@@ -46,12 +49,8 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
             marginBottom: "20px",
           }}
         >
-          Chỉnh sửa thông tin
+          Thêm mới nhân viên
         </h2>
-        <p className="note">
-          *Được phép cập nhật thông tin tài khoản của nhân viên ( Bao gồm phân
-          quyền ) ngoại trừ mã nhân viên
-        </p>
         <form>
           <div style={{ display: "flex", margin: "0 auto" }}>
             <label>
@@ -64,7 +63,7 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
                   left: "-30px",
                   borderRadius: "25px",
                 }}
-                onChange={(event) => handleChange(event)}
+                onChange={(event) => handleChange(event, "name")}
               />
             </label>
             <label>
@@ -78,14 +77,14 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
                   left: "-30px",
                   borderRadius: "25px",
                 }}
-                onChange={(event) => handleChange(event)}
+                onChange={(event) => handleChange(event, "phone_number")}
               />
             </label>
             <label>
               Mã nhân viên
               <input
                 type="text"
-                defaultValue={employee.hashId}
+                
                 style={{
                   width: "200px",
                   position: "relative",
@@ -93,7 +92,6 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
                   borderRadius: "25px",
                 }}
                 onChange={(event) => handleChange(event, "hashId")}
-                readOnly
               />
             </label>
           </div>
@@ -116,8 +114,8 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
                 }}
                 onChange={(event) => handleChange(event, "role")}
               >
-                <option value={employee.role}>
-                  {roleLabel(employee.role)}
+                <option value="">
+                  Chọn phân quyền
                 </option>
                 <option value="user">Nhân viên</option>
                 <option value="admin">Quản trị</option>
@@ -141,7 +139,7 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
                 }}
                 onChange={(event) => handleChange(event, "gender")}
               >
-                <option value={employee.gender}>{employee.gender}</option>
+                <option value="">Chọn giới tính</option>
                 <option value="Nam">Nam</option>
                 <option value="Nữ">Nữ</option>
               </select>
@@ -150,7 +148,6 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
               Mật khẩu
               <input
                 type="text"
-                defaultValue={employee.password}
                 style={{
                   width: "200px",
                   position: "relative",
@@ -166,7 +163,6 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
               Ngày sinh:
               <input
                 type="date"
-                defaultValue={employee.dateOfBirth}
                 style={{
                   width: "300px",
                   position: "relative",
@@ -180,7 +176,6 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
               Mã căn cước công dân:
               <input
                 type="text"
-                defaultValue={employee.cccd}
                 style={{
                   width: "400px",
                   position: "relative",
@@ -196,7 +191,7 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
             <button
               type="button"
               className="save-btn"
-              onClick={handleUpdateUser}
+              onClick={handleCreateUser}
             >
               Lưu
             </button>
@@ -210,4 +205,4 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
   );
 };
 
-export default Modal;
+export default CreateModal;

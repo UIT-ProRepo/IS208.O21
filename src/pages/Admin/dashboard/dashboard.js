@@ -3,14 +3,15 @@ import "./dashboard.css";
 import { del, get } from "../../../utils/request";
 import Modal from "./components/updateModal/modal";
 import { deleteU } from "../../../services/userService";
-
+import CreateModal from "./components/createModal/createModal";
+import { FaPlus } from "react-icons/fa";
 const Dashboard = (props) => {
   const [reload, setReload] = useState(false);
   const [users, setUser] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [ID, setID] = useState("");
-
+  const [showCreateModal, setShowCreateModal] = useState(false);
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await get("users");
@@ -27,6 +28,9 @@ const Dashboard = (props) => {
     setShowModal(false);
   };
 
+  const handleCloseCreateModal = () => {
+    setShowCreateModal(false);
+  };
   const roleLabel = (role) => {
     if (role === "user") return "Nhân viên";
     if (role === "admin") return "Quản trị (Admin)";
@@ -61,9 +65,14 @@ const Dashboard = (props) => {
   };
 
   const handleDeleteUser = async (user) => {
-    const user_id = user.id;
-    console.log(user_id);
-    const res = await deleteU(user_id);
+    if (user.role !== "admin") {
+      const user_id = user.id;
+      const res = await deleteU(user_id);
+      handleReload();
+    }
+  };
+  const handleCreateUser = () => {
+    setShowCreateModal(true);
     handleReload();
   };
 
@@ -84,10 +93,21 @@ const Dashboard = (props) => {
       }}
     >
       <h1>Danh sách nhân viên</h1>
+      <button
+        style={{
+          margin: "20px",
+          height: "40px",
+          width: "260px",
+        }}
+        onClick={handleCreateUser}
+      >
+        <FaPlus /> Thêm nhân viên
+      </button>
       <table>
         <thead>
           <tr>
             <th>Mã nhân viên</th>
+            <th>Ảnh đại diện</th>
             <th>Họ tên</th>
             <th>Số điện thoại</th>
             <th>Mã căn cước công dân</th>
@@ -103,8 +123,19 @@ const Dashboard = (props) => {
           {users.map((users, index) => (
             <tr key={index} style={{ textAlign: "center" }}>
               <td>{users.hashId}</td>
+              <td>
+                <img
+                  src={users.ava_url}
+                  style={{
+                    borderRadius: "999px",
+                    width: "90px",
+                    marginLeft: "15px",
+                  }}
+                  alt="ảnh đại diện"
+                ></img>
+              </td>
               <td>{users.name}</td>
-              <td>{users.phone_number}</td>
+              <td style={{ width: "150px" }}>{users.phone_number}</td>
               <td>{users.cccd}</td>
               <td>{roleLabel(users.role)}</td>
               <td>{users.dateOfBirth}</td>
@@ -137,6 +168,13 @@ const Dashboard = (props) => {
         iD={ID}
         onReload={handleReload}
         reload={reload}
+      />
+      <CreateModal
+        show={showCreateModal}
+        handleClose={handleCloseCreateModal}
+        onReload={handleReload}
+        reload={reload}
+        users={users}
       />
     </div>
   );

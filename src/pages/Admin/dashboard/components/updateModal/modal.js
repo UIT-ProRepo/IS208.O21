@@ -11,10 +11,8 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
     setEmployeeData((prevData) => ({
       ...prevData,
       [fname]: value,
-    })
-    );
+    }));
   };
-  console.log(employeeData);
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await get(`users?id=${iD}`);
@@ -56,7 +54,7 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
         </h2>
         <p className="note">
           *Được phép cập nhật thông tin tài khoản của nhân viên ( Bao gồm phân
-          quyền ) ngoại trừ mã nhân viên
+          quyền ), các admin không được sửa thông tin cho nhau
         </p>
         <form>
           <div style={{ display: "flex", margin: "0 auto" }}>
@@ -169,7 +167,7 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
               />
             </label>
           </div>
-          <div style={{ display: "flex", margin: "20px auto" }}>
+          <div style={{ display: "flex", margin: "20px" }}>
             <label>
               Ngày sinh:
               <input
@@ -190,13 +188,28 @@ const Modal = ({ show, handleClose, employee, iD, onReload, reload }) => {
                 type="text"
                 defaultValue={employee.cccd}
                 style={{
-                  width: "400px",
+                  width: "200px",
                   position: "relative",
                   left: "-30px",
                   borderRadius: "25px",
                   textAlign: "center",
                 }}
                 onChange={(event) => handleChange(event, "cccd")}
+              />
+            </label>
+            <label>
+              Ảnh đại diện:
+              <input
+                type="text"
+                defaultValue={employee.ava_url}
+                style={{
+                  width: "250px",
+                  position: "relative",
+                  left: "-30px",
+                  borderRadius: "15px",
+                  textAlign: "center",
+                }}
+                onChange={(event) => handleChange(event, "ava_url")}
               />
             </label>
           </div>

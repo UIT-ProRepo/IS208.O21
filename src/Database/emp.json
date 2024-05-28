@@ -3,15 +3,23 @@
     {
       "id": "1",
       "hashId": "2004",
-      "password": "123",
+      "password": "111",
       "role": "user",
       "dateOfBirth": "2004-10-05",
+      "ava_url": "https://scontent.fsgn5-3.fna.fbcdn.net/v/t39.30808-1/300337733_374313474902770_7411204524340197500_n.jpg?stp=dst-jpg_p200x200&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=msLWV2TR-ToQ7kNvgEn6QYl&_nc_ht=scontent.fsgn5-3.fna&oh=00_AYBPcx4DmDmxOD3j38pUfEmff5je1knmAIna-Lx_ts4A0A&oe=665B665C",
       "token": "B79HrAlppoDkVV4",
       "name": "Võ Thanh Nhàn",
-      "phone_number": "0934183741",
+      "phone_number": "0393719734",
       "cccd": "0492041237238123",
       "gender": "Nữ",
-      "scheduled_meeting": []
+      "scheduled_meeting": [
+        {
+          "date": "2024-05-25",
+          "session": "Sáng",
+          "room": "Phòng họp A.105 (Tòa A)",
+          "department": "Báo cáo đồ án "
+        }
+      ]
     },
     {
       "id": "2",
@@ -19,10 +27,11 @@
       "password": "124",
       "role": "user",
       "dateOfBirth": "2004-01-01",
+      "ava_url": "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-1/431652401_419758670722633_7319480550073722874_n.jpg?stp=dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=UcXzvOgMt_8Q7kNvgHZonZR&_nc_ht=scontent.fsgn5-10.fna&oh=00_AYDFTP3xEkAkwDkhitIwjQ8VamFQKBJWLxlJJP4TiaQ7lQ&oe=665B6EA5",
       "token": "f1Zep4GwG2f0xQ7",
       "name": "Huỳnh Ngọc Diễm Phúc",
-      "phone_number": "0962260337",
-      "cccd": "04920414283524",
+      "phone_number": "0962265555",
+      "cccd": "04920414285555",
       "gender": "Nữ",
       "scheduled_meeting": [
         {
@@ -30,6 +39,24 @@
           "session": "Chiều",
           "room": "Phòng họp E.802 ( Tòa E )",
           "department": "Review lương lần 1"
+        },
+        {
+          "date": "2024-06-13",
+          "session": "Chiều",
+          "room": "Phòng họp E.802 ( Tòa E )",
+          "department": "Review tăng lương lần 2"
+        },
+        {
+          "date": "2024-06-13",
+          "session": "Chiều",
+          "room": "Phòng họp E.802 ( Tòa E )",
+          "department": "Review tăng lương lần 3"
+        },
+        {
+          "date": "2024-06-13",
+          "session": "Tối",
+          "room": "Phòng họp E.802 ( Tòa E )",
+          "department": "Review tăng lương lần 3"
         }
       ]
     },
@@ -39,6 +66,7 @@
       "password": "125",
       "role": "admin",
       "dateOfBirth": "2004-01-01",
+      "ava_url": "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-1/434213661_3580650332250284_2933504892869045248_n.jpg?stp=dst-jpg_p200x200&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=l3spi6n_LhcQ7kNvgEHyqvp&_nc_ht=scontent.fsgn5-10.fna&oh=00_AYDzHLmUaPAJTeKoa_VlFRLEBYes8TGsNsnnPiYZd_7t9A&oe=665B599D",
       "token": "f1Zep4GwG2f0xQ7",
       "name": "Phạm Nguyên Tú",
       "phone_number": "0934145609",
@@ -52,6 +80,7 @@
       "password": "126",
       "role": "reviewer",
       "dateOfBirth": "2004-01-01",
+      "ava_url": "https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-1/311367347_865026311573137_1179728977714717923_n.jpg?stp=dst-jpg_s200x200&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=nm1993_Am9kQ7kNvgERtVHG&_nc_ht=scontent.fsgn5-5.fna&oh=00_AYDxOgYxcy9QSvN6O6loLXS2tWoxUavcAfeThdXjU7qCQw&oe=665B6172",
       "token": "F8sP4lR2nM0iC9O",
       "name": "Huỳnh Yến Nhi",
       "phone_number": "0934263903",
@@ -78,6 +107,7 @@
       "password": "127",
       "role": "user",
       "dateOfBirth": "2004-01-01",
+      "ava_url": "https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-1/410947091_1368284014083099_1492788851818217471_n.jpg?stp=dst-jpg_s200x200&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=vE-tHW8-e98Q7kNvgF84KMD&_nc_ht=scontent.fsgn5-5.fna&oh=00_AYByfmrmnw1_Aw8acH1mei45uX2NQugmHAFNAbRQvM1iMA&oe=665B5C62",
       "token": "F8sP4lR2nM0iC9O",
       "name": "Phạm Thuỵ Thảo Như",
       "phone_number": "0934395023",
@@ -170,7 +200,23 @@
       "hashId_user": "2005",
       "scope": "Xin nghỉ việc",
       "content": "Tôi không muốn làm việc vì sếp giao task quá khó",
-      "status": "Chưa gửi"
+      "status": "Từ chối"
+    },
+    {
+      "id": "93c4",
+      "date_sent": "24-05-2024",
+      "hashId_user": "2005",
+      "scope": "Xin nghỉ phép",
+      "content": "Test",
+      "status": "Chấp nhận"
+    },
+    {
+      "id": "9661",
+      "date_sent": "24-05-2024",
+      "hashId_user": "2005",
+      "scope": "Xin chuyển đơn vị công tác",
+      "content": "Test2",
+      "status": "Đang chờ duyệt"
     }
   ],
   "news": [

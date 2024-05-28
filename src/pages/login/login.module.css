@@ -54,7 +54,7 @@ button {
   align-items: center;
   gap: 10px;
   border-radius: 64px;
-  background-image: linear-gradient(to right, #5874dc , #384e78);
+  background-image: linear-gradient(to right, #5874dc, #384e78);
   color: #fff;
   text-align: center;
   font-family: Exo;
@@ -67,6 +67,8 @@ button {
 
 button:hover {
   cursor: pointer;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
 }
 
 .logo {
