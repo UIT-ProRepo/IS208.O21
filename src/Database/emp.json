@@ -236,51 +236,51 @@
   "news": [
     {
       "id": "1",
-      "title": "About Ghost + Gatsby",
-      "urlThumbnail": "https://gatsby.ghost.io/content/images/2019/01/ghost-headless-feature-image.png",
-      "head_title": "Build an API driven static-site with Gatsby.js and use Ghost as a completely decoupled headless CMS. Read more about how it works and how to use this starter theme here!"
+      "title": "Đào tạo nâng cao kỹ năng",
+      "urlThumbnail": "https://th.bing.com/th/id/R.d6203448e2a3c2160af27925e74581d8?rik=Qe%2fA0K0RHcZTgw&pid=ImgRaw&r=0",
+      "head_title": "Chương trình đào tạo nâng cao kỹ năng làm việc cho nhân viên diễn ra vào tuần thứ 2 của tháng 8, nhằm cải thiện hiệu suất công việc."
     },
     {
       "id": "2",
-      "title": "Welcome to Ghost",
+      "title": "Tổ chức cuộc thi sáng tạo",
       "urlThumbnail": "https://static.ghost.org/v3.0.0/images/welcome-to-ghost.png",
-      "head_title": "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time."
+      "head_title": "Cuộc thi sáng tạo nội bộ diễn ra vào tháng 11, khuyến khích nhân viên đóng góp ý tưởng phát triển sản phẩm và dịch vụ mới."
     },
     {
       "id": "3",
-      "title": "Writing posts with Ghost ✍️",
-      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/writing-posts-with-ghost.png",
-      "head_title": "Discover familiar formatting options in a functional toolbar and the ability to add dynamic content seamlessly."
+      "title": "Tổ chức hội thảo chuyên đề ✍️",
+      "urlThumbnail": "https://th.bing.com/th/id/OIP.e-Mxn8J9tNmlHA2b6KkbTAHaD8?rs=1&pid=ImgDetMain",
+      "head_title": "Hội thảo về xu hướng công nghệ năm 2024 được tổ chức vào ngày 14/06/2024, thu hút đông đảo khách mời và chuyên gia tham dự."
     },
     {
       "id": "4",
-      "title": "Publishing options",
-      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/publishing-options.png",
-      "head_title": "The Ghost editor post settings menu has everything you need to fully optimise and distribute your content effectively."
+      "title": "Chương trình từ thiện thường niên",
+      "urlThumbnail": "https://th.bing.com/th/id/R.f4dcb196efaa88888f11044b6839e581?rik=AOlDMFQj2jaPJg&pid=ImgRaw&r=0",
+      "head_title": "Công ty thực hiện chương trình từ thiện vào ngày 6/6/2024, hỗ trợ trẻ em vùng cao với hàng ngàn phần quà ý nghĩa"
     },
     {
       "id": "5",
-      "title": "Managing admin settings",
-      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/admin-settings.png",
-      "head_title": "There are a couple of things to do next while you're getting set up: making your site private and inviting your team."
+      "title": "Team building tại Phú Quốc",
+      "urlThumbnail": "https://th.bing.com/th/id/OIP.diaSeSkQQN1B92CCJsUTqAHaEj?rs=1&pid=ImgDetMain",
+      "head_title": "Tháng 6, hoạt động team building tại Phú Quốc diễn ra sôi nổi, tăng cường tinh thần đoàn kết và gắn bó giữa các nhân viên."
     },
     {
       "id": "6",
-      "title": "Organising your content",
-      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/organising-your-content.png",
-      "head_title": "Ghost has a flexible organisational taxonomy called tags and the ability to create custom site structures using dynamic routes."
+      "title": "Ra mắt sản phẩm mới",
+      "urlThumbnail": "https://th.bing.com/th/id/R.f9d45430b2ac39d7e89034ee82c10953?rik=zWoET4MBPExyPQ&pid=ImgRaw&r=0",
+      "head_title": "Tháng 4, công ty giới thiệu dòng sản phẩm openAI, đáp ứng nhu cầu thị trường với nhiều tính năng ưu việt."
     },
     {
       "id": "7",
-      "title": "Apps & integrations",
-      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/app-integrations.png",
-      "head_title": "Work with all your favourite apps and tools or create your own custom integrations using the Ghost API."
+      "title": "Khai trương văn phòng mới",
+      "urlThumbnail": "https://th.bing.com/th/id/OIP.z21U-J1VdGZq6a2r3_C1dgHaE8?rs=1&pid=ImgDetMain",
+      "head_title": "Văn phòng chi nhánh mới tại Đà Nẵng chính thức khai trương vào tháng 2, mở rộng phạm vi hoạt động của công ty."
     },
     {
       "id": "8",
-      "title": "Creating a custom theme",
-      "urlThumbnail": "https://static.ghost.org/v3.0.0/images/creating-a-custom-theme.png",
-      "head_title": "Ghost comes with a beautiful default theme designed for publishers which can easily be adapted for most purposes, or you can build a custom theme to suit your needs."
+      "title": "Thông báo lịch tất niên công ty",
+      "urlThumbnail": "https://cdn.nhanlucnganhluat.vn/uploads/images/aa77340b/source/2020-06/101061178_2654022998036131_2887204632734466048_o.jpg",
+      "head_title": "Thông báo: Lịch ăn tất niên công ty vào ngày 18/01/2024, từ 18h tại nhà hàng buffet D'Maris. Mong mọi người tham dự đông đủ."
     }
   ]
 }
