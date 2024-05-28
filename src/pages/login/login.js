@@ -18,7 +18,7 @@ function Login() {
     const response = await getLogin(hashId, password);
 
     if (response.length > 0) {
-      console.log(response[0]);
+      console.log(response[0]); 
       setCookie("id", response[0].id, 1);
       setCookie("hashId", response[0].hashId, 1);
       setCookie("password", response[0].password, 1);
@@ -28,7 +28,7 @@ function Login() {
       setCookie("name", response[0].name, 1);
       console.log(response[0].dateOfBirth, getDateStringFormat());
       if (response[0].dateOfBirth == getDateStringFormat()) {
-        setCookie("happy_birthday", 0, 1);
+        setCookie("happy_birthday", 1000, 1);
       }
       dispatch(checkLogin(true));
 

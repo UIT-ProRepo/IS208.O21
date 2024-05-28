@@ -17,7 +17,7 @@ function NewsList() {
   const countHPBD = getCookie("happy_birthday");
   const Name = getCookie("name");
   const HPBDModal = () => {
-    if (countHPBD == 0) {
+    if (countHPBD == 1000) {
       swal({
         title: "Chúc mừng sinh nhật",
         text: `Chúc mừng sinh nhật ${Name}!, mong rằng bạn sẽ tiếp tục cố gắng cống hiến cho ELEVEN`,

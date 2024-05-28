@@ -127,6 +127,20 @@
           "department": "Kế hoạch xây dựng dự án sàn BTH"
         }
       ]
+    },
+    {
+      "id": 6,
+      "name": "Huỳnh Thiên Bảo",
+      "ava_url": "https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png",
+      "phone_number": "0912345678",
+      "hashId": "2009",
+      "role": "admin",
+      "gender": "Nam",
+      "password": "123",
+      "dateOfBirth": "2024-05-28",
+      "cccd": "04920412345678",
+      "scheduled_meeting": [],
+      "token": "Mbz22cQlylg2SL5"
     }
   ],
   "request": [
