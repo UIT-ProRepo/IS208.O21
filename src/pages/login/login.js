@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { setCookie } from "../../helpers/cookie";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../actions/login";
+import { getDateStringFormat } from "../../utils/date";
 
 function Login() {
   const navigate = useNavigate();
@@ -24,7 +25,11 @@ function Login() {
       setCookie("role", response[0].role, 1);
       setCookie("token", response[0].token, 1);
       setCookie("avatar", response[0].ava_url, 1);
-
+      setCookie("name", response[0].name, 1);
+      console.log(response[0].dateOfBirth, getDateStringFormat());
+      if (response[0].dateOfBirth == getDateStringFormat()) {
+        setCookie("happy_birthday", 0, 1);
+      }
       dispatch(checkLogin(true));
 
       if (response[0].role == "user") navigate("/");

@@ -1,17 +1,33 @@
 import { useEffect, useState } from "react";
 import "./newsList.css";
 import { getListNews } from "../../../services/newService";
-
+import { getCookie, setCookie } from "../../../helpers/cookie";
+import swal from "sweetalert";
 function NewsList() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchNews = async () => {
       const response = await getListNews();
       setData(response);
+      HPBDModal();
     };
     fetchNews();
   }, []);
 
+  const countHPBD = getCookie("happy_birthday");
+  const Name = getCookie("name");
+  const HPBDModal = () => {
+    if (countHPBD == 0) {
+      swal({
+        title: "Chúc mừng sinh nhật",
+        text: `Chúc mừng sinh nhật ${Name}!, mong rằng bạn sẽ tiếp tục cố gắng cống hiến cho ELEVEN`,
+        icon: "info",
+        button: "OK!",
+      });
+      setCookie("happy_birthday", 1, 1);
+      console.log("asdf");
+    }
+  };
   return (
     <>
       <div className="backGround">
